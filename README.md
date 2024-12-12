@@ -1,36 +1,68 @@
-# GameQuiz
+🎮 Superman Dos Pampas 
+===
 
-A [libGDX](https://libgdx.com/) project generated with [gdx-liftoff](https://github.com/libgdx/gdx-liftoff).
+Nesse jogo quiz nós trabalhamos a ideia de valorizar os nossos geoparques presentes no nosso estado do Rio Grande do Sul, por meio de perguntas ilustrativas incentivamos a busca e teste do conhecimento das belezas naturais aqui presentes.
 
-This project was generated with a template including simple application launchers and an `ApplicationAdapter` extension that draws libGDX logo.
+---
 
-## Platforms
+## 👾 Jogo
 
-- `core`: Main module with the application logic shared by all platforms.
-- `lwjgl3`: Primary desktop platform using LWJGL3; was called 'desktop' in older docs.
-- `html`: Web platform using GWT and WebGL. Supports only Java projects.
+O jogo consiste em você controlar o Superman, que atira laser pelos olhos ao clicar, e o objetivo principal é atirar em uma das naves que irão vir, cada uma com uma resposta para a pergunta que aparecerá na tela sobre o tema de geoparques e apenas uma contendo a resposta correta. 
 
-## Gradle
 
-This project uses [Gradle](https://gradle.org/) to manage dependencies.
-The Gradle wrapper was included, so you can run Gradle tasks using `gradlew.bat` or `./gradlew` commands.
-Useful Gradle tasks and flags:
+* [Foto do jogo]
 
-- `--continue`: when using this flag, errors will not stop the tasks from running.
-- `--daemon`: thanks to this flag, Gradle daemon will be used to run chosen tasks.
-- `--offline`: when using this flag, cached dependency archives will be used.
-- `--refresh-dependencies`: this flag forces validation of all dependencies. Useful for snapshot versions.
-- `build`: builds sources and archives of every project.
-- `cleanEclipse`: removes Eclipse project data.
-- `cleanIdea`: removes IntelliJ project data.
-- `clean`: removes `build` folders, which store compiled classes and built archives.
-- `eclipse`: generates Eclipse project data.
-- `html:dist`: compiles GWT sources. The compiled application can be found at `html/build/dist`: you can use any HTTP server to deploy it.
-- `html:superDev`: compiles GWT sources and runs the application in SuperDev mode. It will be available at [localhost:8080/html](http://localhost:8080/html). Use only during development.
-- `idea`: generates IntelliJ project data.
-- `lwjgl3:jar`: builds application's runnable jar, which can be found at `lwjgl3/build/libs`.
-- `lwjgl3:run`: starts the application.
-- `test`: runs unit tests (if any).
+---
+## ⚙️ Parte técnica
+    
+Para desenvolver esse jogo foi usada a biblioteca [libGDX](https://libgdx.com) do Java, por meio dessa função conseguimos criar a parte gráfica juntamente com a lógica do programa, como por exemplo na função de criar os inimigos:
 
-Note that most tasks that are not specific to a single project can be run with `name:` prefix, where the `name` should be replaced with the ID of a specific project.
-For example, `core:clean` removes `build` folder only from the `core` project.
+```java
+private void gerarInimigos() {
+    float posXInimigo1 = 1400;
+    float posYInimigo1 = 200;
+    float posXInimigo2 = 1400;
+    float posYInimigo2 = 400;
+
+    for (int i = 0; i < 2; i++) {
+        Texture inimigoTexture = inimigoTextures[indiceImagem * 2 + i];
+        Sprite inimigo = new Sprite(inimigoTexture);
+
+        if (i == 0) {
+            inimigo.setPosition(posXInimigo1, posYInimigo1);
+        } else {
+            inimigo.setPosition(posXInimigo2, posYInimigo2);
+        }
+
+        inimigos.add(inimigo);
+    }
+
+    indiceImagem++;
+    podeResponder = true;
+}  
+```
+___
+
+## Perguntas realizadas:
+- O que é um geoparque?
+- Onde se localiza o geoparque?
+- São exemplos de área de grande beleza:
+- Qual é o tipo de turismo promovido?
+- É uma comunidade que reside na região:
+- O que é ggn?
+- Em que ano a UNESCO iniciou com os geoparques?
+- Qual bioma predomina no geoparque?
+- Uma formação rochosa símbolo do geoparque:
+- Qual o objetivo do geoparque?
+
+
+## Considerações finais:
+
+Acreditamos que realizamos um bom trabalho e também conseguimos instigar as pessoas a procurar por mais conhecimentos da nossa própria cultura e terra natal, fazendo isso de uma forma legal e recreativa para todos os públicos.
+
+---
+
+### Bibliografia:
+
+- [libGDX](https://libgdx.com) e [Documentação](https://libgdx.com/dev/)
+- Ferramentas de IA

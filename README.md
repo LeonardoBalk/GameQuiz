@@ -10,7 +10,7 @@ Nesse jogo quiz nós trabalhamos a ideia de valorizar os nossos geoparques prese
 O jogo consiste em você controlar o Superman, que atira laser pelos olhos ao clicar, e o objetivo principal é atirar em uma das naves que irão vir, cada uma com uma resposta para a pergunta que aparecerá na tela sobre o tema de geoparques e apenas uma contendo a resposta correta. 
 
 
-* [Foto do jogo]
+![Foto do jogo](./assets/fotoJogo.png)
 
 ---
 ## ⚙️ Parte técnica
